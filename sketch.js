@@ -11,7 +11,7 @@ var world,boy;
 var launchingForce=100;
 
 function preload(){
-	boy=loadImage("images/boy.png");
+	boy=loadImage("boy.png");
   }
 
 function setup() {
@@ -48,7 +48,7 @@ function setup() {
   });
 	
 	Engine.run(engine);
- // Render.run(render);
+
 }
 
 function draw() {
@@ -101,7 +101,7 @@ function mouseDragged()
 function mouseReleased()
 {
 	launcherObject.fly();
-    // distance=int(dist(stoneObj.x,stoneObj.y,mango1.x,mango1.y));
+  
 }
 
 function keyPressed() {
@@ -112,20 +112,15 @@ function keyPressed() {
   }
 
   function detectollision(lstone,lmango){
-	/*var collision = Matter.SAT.collides(lstone,lmango);
-	if(collision.collided){
-		console.log("collided");
-		Matter.Body.setStatic(lmango,false);	
-	}*/
+
   mangoBodyPosition=lmango.body.position
   stoneBodyPosition=lstone.body.position
   
   var distance=dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
-  //console.log(distance)
- // console.log(lmango.r+lstone.r)
+
   	if(distance<=lmango.r+lstone.r)
     {
-      //console.log(distance);
+     
   	  Matter.Body.setStatic(lmango.body,false);
     }
 
